@@ -1,13 +1,18 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Jira Transition Issue'
+description: 'Finds the issue key from commit and transitions the issue in Jira'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  jira_base_url:
+    description: 'Jira base URL'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  jira_user_email:
+    description: 'Jira user email'
+    required: true
+  jira_api_token:
+    description: 'Jira API token'
+    required: true
+  issue_transition:
+    description: 'Issue transition'
+    required: true
 runs:
   using: 'node16'
   main: 'dist/index.js'
