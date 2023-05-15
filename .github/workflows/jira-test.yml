@@ -5,12 +5,15 @@ on:
     branches:
       - main
 
-
 jobs:
-  jira-test:
-    runs-on: ubuntu-latest
-    name: jira-test
+  - name: jira-test
     steps:
+      - name: Find in Jira ticket
+        uses: atlassian/gajira-find-issue-key@master
+        id: jira-ticket
+        with:
+          from: commits
+
       - name: jira-test
         id: hello
         uses: Hyunju-Sung/actions-jira-process-hj@main
