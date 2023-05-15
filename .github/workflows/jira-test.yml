@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest  # Specify the type of machine to run the job on.
     steps:
       - name: Find in Jira ticket
-        uses: atlassian/gajira-find-issue-key@master
+        uses: atlassian/gajira-find-issue-key@v3
         id: jira-ticket
         with:
           from: commits
