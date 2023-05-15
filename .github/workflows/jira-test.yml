@@ -1,7 +1,10 @@
 name: Jira Test
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+
 
 jobs:
   jira-test:
