@@ -9,6 +9,13 @@ jobs:
   jira-test:    # This is the job id, it should not start with a dash.
     runs-on: ubuntu-latest  # Specify the type of machine to run the job on.
     steps:
+      - name: Login
+        uses: atlassian/gajira-login@master
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
       - name: Find in Jira ticket
         uses: atlassian/gajira-find-issue-key@v3
         id: jira-ticket
