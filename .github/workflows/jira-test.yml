@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  - name: jira-test
+  jira-test:    # This is the job id, it should not start with a dash.
+    runs-on: ubuntu-latest  # Specify the type of machine to run the job on.
     steps:
       - name: Find in Jira ticket
         uses: atlassian/gajira-find-issue-key@master
@@ -22,4 +23,3 @@ jobs:
           jira_user_email: ${{ secrets.JIRA_USER_EMAIL }}
           jira_api_token: ${{ secrets.JIRA_API_TOKEN }}
           issue_transition: 'LIVE QA'
-
