@@ -15,5 +15,5 @@ jobs:
           jira_base_url: ${{ secrets.JIRA_BASE_URL }}
           jira_user_email: ${{ secrets.JIRA_USER_EMAIL }}
           jira_api_token: ${{ secrets.JIRA_API_TOKEN }}
-          issue_transition: 'QA필요'
+          issue_transition: 'LIVE QA'
 
