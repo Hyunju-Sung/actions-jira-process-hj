@@ -26,6 +26,8 @@ async function run() {
     // Extract issue key from commit message
     const issueKey = extractIssueKeyFromCommit(commitMessage);
 
+    console.log(issueKey);
+
     if (issueKey) {
       // Transition issue
       await jira.transitionIssue(issueKey, {
